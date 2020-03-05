@@ -1,19 +1,19 @@
-# REST-Doc
+# REST-Docs
 
 RESTful HTTP client library + Docs to test API REST.
 
 ## Install
 
 ```bash
-npm install rest-doc
+npm install rest-docs
 ```
 
 ## Usage
 
 ```javascript
 // server.js
-const rest_doc = require('rest-doc');
-var rest = new rest_doc();
+const rest_docs = require('rest-docs');
+var rest = new rest_docs();
 
 const config = {
 
@@ -52,7 +52,7 @@ const api = {
       ]
     }
   ]
-  
+
 }
 
 rest.buildRoutes(api)
