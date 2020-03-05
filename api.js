@@ -1,6 +1,6 @@
 module.exports = {
 
-  base: '/api/',
+  base: '/api',
   routes: [
     {
       // Médicos ['GET']

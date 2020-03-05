@@ -25,7 +25,7 @@ rest.startServer()
 
 const api = {
 
-  base: '/api/',
+  base: '/api',
   routes: [
     {
       // Médicos ['GET']

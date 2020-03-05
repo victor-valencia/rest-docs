@@ -47,7 +47,7 @@ rest.startServer()
 
 const api = {
 
-  base: '/api/',
+  base: '/api',
   routes: [
     {      
       table: 'doctors',
