@@ -2,6 +2,16 @@
 
 RESTful HTTP client library + Docs to test API REST.
 
+# [REST-Docs](http://victor-valencia.github.io/rest-docs)
+![API](resources/img/api_index.png)
+
+## Table of contents
+- [Install](#install)
+- [Usage](#usage)
+- [Run](#run)
+- [Author](#author)
+- [License](#license)
+
 ## Install
 
 ```bash
@@ -61,10 +71,11 @@ API Docs:
 
 * GET /api/docs
 
-API:
+![API](resources/img/api_index.png)
 
-* GET /api/doctors    
-* GET /api/doctors/:id
+API Test:
+
+![API](resources/img/api_test.png)
 
 ## Run
 
