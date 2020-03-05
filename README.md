@@ -1,4 +1,4 @@
-# [REST-Docs](http://victor-valencia.github.io/rest-docs)
+# [REST-Docs](https://github.com/victor-valencia/rest-docs)
 
 RESTful HTTP client library + Docs to test API REST.
 

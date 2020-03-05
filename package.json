@@ -1,14 +1,14 @@
 {
   "name": "rest-docs",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "RESTful HTTP client library + Docs to test API REST.",
-  "main": "rest.js",
+  "main": "lib/rest.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/victor-valencia/rest-doc.git"
+    "url": "git+https://github.com/victor-valencia/rest-docs.git"
   },
   "keywords": [
     "rest",
@@ -17,9 +17,9 @@
   "author": "Victor Valencia Rico",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/victor-valencia/rest-doc/issues"
+    "url": "https://github.com/victor-valencia/rest-docs/issues"
   },
-  "homepage": "https://github.com/victor-valencia/rest-doc#readme",
+  "homepage": "https://github.com/victor-valencia/rest-docs#readme",
   "dependencies": {
     "cors": "^2.8.5",
     "dotenv": "^8.2.0",
