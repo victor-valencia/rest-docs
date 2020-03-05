@@ -1,14 +1,14 @@
-# REST-Docs
+# [REST-Docs](http://victor-valencia.github.io/rest-docs)
 
 RESTful HTTP client library + Docs to test API REST.
 
-# [REST-Docs](http://victor-valencia.github.io/rest-docs)
 ![API](resources/img/api_index.png)
 
 ## Table of contents
 - [Install](#install)
 - [Usage](#usage)
 - [Run](#run)
+- [Result](#result)
 - [Author](#author)
 - [License](#license)
 
@@ -67,6 +67,14 @@ const api = {
 
 rest.buildRoutes(api)
 ```
+
+## Run
+
+```bash
+node server.js
+```
+
+## Result
 API Docs:
 
 * GET /api/docs
@@ -76,12 +84,6 @@ API Docs:
 API Test:
 
 ![API](resources/img/api_test.png)
-
-## Run
-
-```bash
-node server.js
-```
 
 ## Author
 
