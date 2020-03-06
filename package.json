@@ -1,6 +1,6 @@
 {
   "name": "rest-docs",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "RESTful HTTP client library + Docs to test your API REST.",
   "main": "lib/rest.js",
   "scripts": {
