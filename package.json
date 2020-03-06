@@ -1,7 +1,7 @@
 {
   "name": "rest-docs",
-  "version": "0.0.6",
-  "description": "RESTful HTTP client library + Docs to test API REST.",
+  "version": "0.1.0",
+  "description": "RESTful HTTP client library + Docs to test your API REST.",
   "main": "lib/rest.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -21,6 +21,7 @@
   },
   "homepage": "https://github.com/victor-valencia/rest-docs#readme",
   "dependencies": {
+    "body-parser": "^1.19.0",
     "cors": "^2.8.5",
     "dotenv": "^8.2.0",
     "ejs": "^3.0.1",

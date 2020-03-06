@@ -31,7 +31,7 @@ const api = {
       // Médicos ['GET']
       table: 'doctors',
       event: 'DOCTOR',
-      methods: ['GET'],
+      methods: ['GET', 'POST', 'PUT', 'DELETE'],
       columns: [
           {name: 'id', primary: true},
           {name: 'name'},

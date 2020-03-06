@@ -1,14 +1,15 @@
 # [REST-Docs](https://github.com/victor-valencia/rest-docs)
 
-RESTful HTTP client library + Docs to test API REST.
+RESTful HTTP client library + Docs to test your API REST.
 
-![API](resources/img/api_index.png)
+![API](resources/img/api.png)
 
 ## Table of contents
 - [Install](#install)
 - [Usage](#usage)
 - [Run](#run)
 - [Result](#result)
+- [Test API](#test)
 - [Author](#author)
 - [License](#license)
 
@@ -52,7 +53,7 @@ const api = {
     {      
       table: 'doctors',
       event: 'DOCTOR',
-      methods: ['GET'],
+      methods: ['GET', 'POST', 'PUT', 'DELETE'],
       columns: [
           {name: 'id', primary: true},
           {name: 'name'},
@@ -75,15 +76,32 @@ node server.js
 ```
 
 ## Result
-API Docs:
 
 * GET /api/docs
 
-![API](resources/img/api_index.png)
+![API](resources/img/api.png)
 
-API Test:
+## Test API
 
-![API](resources/img/api_test.png)
+* GET /api/doctors
+
+![API](resources/img/api_get_all.png)
+
+* GET /api/doctors/:id
+
+![API](resources/img/api_get_id.png)
+
+* POST /api/doctors
+
+![API](resources/img/api_post.png)
+
+* PUT /api/doctors/:id
+
+![API](resources/img/api_put.png)
+
+* DELETE /api/doctors/:id
+
+![API](resources/img/api_delete.png)
 
 ## Author
 
