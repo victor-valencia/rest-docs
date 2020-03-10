@@ -1,6 +1,6 @@
 {
   "name": "rest-docs",
-  "version": "0.1.1",
+  "version": "0.2.0",
   "description": "RESTful HTTP client library + Docs to test your API REST.",
   "main": "lib/rest.js",
   "scripts": {
@@ -27,6 +27,7 @@
     "ejs": "^3.0.1",
     "express": "^4.17.1",
     "extend": "^3.0.2",
+    "knex": "^0.20.11",
     "mysql": "^2.18.1",
     "socket.io": "^2.3.0"
   }

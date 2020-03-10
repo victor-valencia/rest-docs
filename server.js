@@ -1,37 +1,37 @@
-// const config = require('./config.js');
-// const api = require('./api.js');
+'use strict'
+
+/*
+  |--------------------------------------------------------------------------
+  | EXAMPLE 1:
+  |--------------------------------------------------------------------------
+  |
+  | Basic configuration (Explicit).
+  |
+  */
 
 const rest_doc = require('./lib/rest.js');
 var rest = new rest_doc();
 
-const config = {
+rest.startServer({
+  ip: '127.0.0.1',
+  port: '8080'  
+})
 
-  SERVER: {
-    IP: 'localhost',
-    PORT: '8000',
-    NAME: 'localhost:8000'
-  },
-  DATABASE: {
-    host: 'localhost',
-    user: 'root',
-    password: '1234',
-    database: 'medic_app'    
-  }
+rest.startDBServer('mysql', {
+  host: 'localhost',
+  user: 'root',
+  password: '1234',
+  database: 'medic_app'    
+});
 
-}
-
-rest.setConfig(config)
-rest.startServer()
-
-const api = {
-
+const api_config = {
   base: '/api',
   routes: [
     {
       // Médicos ['GET']
       table: 'doctors',
       event: 'DOCTOR',
-      methods: ['GET', 'POST', 'PUT', 'DELETE'],
+      methods: ['GET', 'POST', 'PUT', 'DELETE', 'SEARCH'],
       columns: [
           {name: 'id', primary: true},
           {name: 'name'},
@@ -40,7 +40,7 @@ const api = {
           {name: 'photo'}
       ]
     }
-  ]
+  ]  
 }
 
-rest.buildRoutes(api)
+rest.buildRoutes(api_config)
