@@ -6,11 +6,11 @@ RESTful HTTP client library + Docs to test your API REST. Supports for `Postgres
 
 ## Table of contents
 - [Install](#install)
-- [Install Database Library](#install_db)
+- [Install Database Library](#install-database-library)
 - [Usage](#usage)
-- [Usage with .env file](#usage_env)
+- [Usage with .env file](#usage-with-env-file)
 - [Result](#result)
-- [Test API](#test)
+- [Test API](#test-api)
 - [Methods](#methods)
 - [Author](#author)
 - [License](#license)
