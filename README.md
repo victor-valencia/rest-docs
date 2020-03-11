@@ -177,10 +177,10 @@ node server.js
 
 The `SERVER_CONFIG` represents the connection to the server.
 
-|Constant |Default    |Description               |
-|---------|-----------|--------------------------|
-|`ip`     |'localhost'|Server ip                 |
-|`port`   |8000       |Server port               |
+|Constant |Default    |Description|
+|---------|-----------|-----------|
+|`ip`     |'localhost'|Server ip  |
+|`port`   |8000       |Server port|
 
 
 ```javascript
@@ -203,12 +203,12 @@ The `CLIENT` parameter is required and determines which client adapter will be u
 
 The `CONNECTION_CONFIG` represents the connection parameters to the database.
 
-|Constant  |Default    |Description                   |
-|----------|-----------|------------------------------|
-|`host`    |'localhost'|Database host name            |
-|`user`    |'root'     |Database user name            |
-|`password`|''         |Database password             |
-|`database`|'database' |Database name                 |
+|Constant  |Default    |Description       |
+|----------|-----------|------------------|
+|`host`    |'localhost'|Database host name|
+|`user`    |'root'     |Database user name|
+|`password`|''         |Database password |
+|`database`|'database' |Database name     |
 
 
 ```javascript
@@ -225,10 +225,10 @@ The `CONNECTION_CONFIG` represents the connection parameters to the database.
 
 The `API_CONFIG` represents the API configuration and its routes.
 
-|Constant |Description                     |
-|---------|--------------------------------|
-|`base`   |Main path of the API            |
-|`routes` |All API routes                  |
+|Constant |Description         |
+|---------|--------------------|
+|`base`   |Main path of the API|
+|`routes` |All API routes      |
 
 
 ```javascript
@@ -248,9 +248,9 @@ The `ROUTE_CONFIG` represents the API route group.
 |----------|------------------------------------------|------------------------------|
 |`table`   |'table'                                   |Table name                    |
 |`view`    |null                                      |View name                     |
-|`event`   |'TABLE'                                   |Event name (For socket.io event. => 'TABLE_INSERTED', 'TABLE_UPDATED', 'TABLE_DELETED') |
+|`event`   |'TABLE'                                   |Event name <br />(For socket.io event. => 'TABLE_INSERTED', 'TABLE_UPDATED', 'TABLE_DELETED') |
 |`methods` |['GET', 'POST', 'PUT', 'DELETE', 'SEARCH']|List of methods to implement  |
-|`columns` |[]                                        |List of columns (Used only by methods 'POST' and 'PUT') |
+|`columns` |[]                                        |List of columns <br />(Used only by methods 'POST' and 'PUT') |
 
 
 ```javascript
@@ -274,10 +274,10 @@ The `ROUTE_CONFIG` represents the API route group.
 
 The `COLUMN_CONFIG` represents the column of table.
 
-|Constant  |Default    |Description                       |
-|----------|-----------|----------------------------------|
-|`name`    |''         |Column name                       |
-|`primary` |false      |Defines if it is a primary key    |
+|Constant  |Default    |Description                   |
+|----------|-----------|------------------------------|
+|`name`    |''         |Column name                   |
+|`primary` |false      |Defines if it is a primary key|
 
 
 ```javascript
