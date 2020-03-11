@@ -1,6 +1,6 @@
 {
   "name": "rest-docs",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "description": "RESTful HTTP client library + Docs to test your API REST.",
   "main": "lib/rest.js",
   "scripts": {
@@ -12,6 +12,8 @@
   },
   "keywords": [
     "rest",
+    "http",
+    "api",
     "rest-docs"
   ],
   "author": "Victor Valencia Rico",
