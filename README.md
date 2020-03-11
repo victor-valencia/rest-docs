@@ -23,13 +23,13 @@ npm install rest-docs --save
 
 ## Install Database Library
 
-- MySQL y MariaDB
+- `MySQL` and `MariaDB`
 
 ```bash
 npm install mysql --save
 ```
 
-- Postgres
+- `Postgres`
 
 ```bash
 npm install pg --save
@@ -145,7 +145,7 @@ node server.js
 
 ## Result
 
-* GET /api/docs
+* GET `/api/docs`
 
 ![API](resources/img/api.png)
 
