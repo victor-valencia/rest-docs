@@ -6,10 +6,12 @@ RESTful HTTP client library + Docs to test your API REST. Supports for `Postgres
 
 ## Table of contents
 - [Install](#install)
+- [Install Database Library](#install_db)
 - [Usage](#usage)
-- [Run](#run)
+- [Usage with .env file](#usage_env)
 - [Result](#result)
 - [Test API](#test)
+- [Methods](#methods)
 - [Author](#author)
 - [License](#license)
 
@@ -19,8 +21,18 @@ RESTful HTTP client library + Docs to test your API REST. Supports for `Postgres
 npm install rest-docs --save
 ```
 
+## Install Database Library
+
+- MySQL y MariaDB
+
 ```bash
 npm install mysql --save
+```
+
+- Postgres
+
+```bash
+npm install pg --save
 ```
 
 ## Usage
@@ -47,9 +59,7 @@ const api_config = {
   routes: [
     {      
       table: 'doctors', //<-- YOUR_TABLE_NAME
-      //For socket.io event. ['DOCTOR_INSERTED' | 'DOCTOR_UPDATED' | 'DOCTOR_DELETED']
       event: 'DOCTOR', //<-- YOUR_EVENT_NAME 
-      //['GET' | 'POST' | 'PUT' | 'DELETE' | 'SEARCH']
       methods: ['GET', 'POST', 'PUT', 'DELETE'], //<-- YOUR_METHODS
       //Used only by methods 'POST' and 'PUT'
       columns: [
@@ -64,6 +74,14 @@ const api_config = {
 }
 
 rest.buildRoutes(api_config)
+```
+
+Run
+
+```bash
+node server.js
+# API Docs at http://127.0.0.1:8080/api/docs
+# App listening at http://127.0.0.1:8080
 ```
 
 ## Usage with .env file
@@ -100,9 +118,7 @@ const api_config = {
   routes: [
     {      
       table: 'doctors', //<-- YOUR_TABLE_NAME
-      //For socket.io event. ['DOCTOR_INSERTED' | 'DOCTOR_UPDATED' | 'DOCTOR_DELETED']
       event: 'DOCTOR', //<-- YOUR_EVENT_NAME 
-      //['GET' | 'POST' | 'PUT' | 'DELETE' | 'SEARCH']
       methods: ['GET', 'POST', 'PUT', 'DELETE'], //<-- YOUR_METHODS
       //Used only by methods 'POST' and 'PUT'
       columns: [
@@ -119,10 +135,12 @@ const api_config = {
 rest.buildRoutes(api_config)
 ```
 
-## Run
+Run
 
 ```bash
 node server.js
+# API Docs at http://localhost:8000/api/docs
+# App listening at http://127.0.0.1:8000
 ```
 
 ## Result
@@ -133,23 +151,23 @@ node server.js
 
 ## Test API
 
-* GET /api/doctors
+* GET `/api/doctors`
 
 ![API](resources/img/api_get_all.png)
 
-* GET /api/doctors/:id
+* GET `/api/doctors/:id`
 
 ![API](resources/img/api_get_id.png)
 
-* POST /api/doctors
+* POST `/api/doctors`
 
 ![API](resources/img/api_post.png)
 
-* PUT /api/doctors/:id
+* PUT `/api/doctors/:id`
 
 ![API](resources/img/api_put.png)
 
-* DELETE /api/doctors/:id
+* DELETE `/api/doctors/:id`
 
 ![API](resources/img/api_delete.png)
 
@@ -161,8 +179,9 @@ The `SERVER_CONFIG` represents the connection to the server.
 
 |Constant |Default    |Description               |
 |---------|-----------|--------------------------|
-|`ip`     |`localhost`| Server ip                |
-|`port`   |`8000`     | Server port              |
+|`ip`     |'localhost'|Server ip                 |
+|`port`   |8000       |Server port               |
+
 
 ```javascript
 // SERVER_CONFIG
@@ -178,18 +197,19 @@ The `CLIENT` parameter is required and determines which client adapter will be u
 
 |Database |CLIENT     |Additional command to install the appropriate database library|
 |---------|-----------|--------------------------------------------------------------|
-|MariaDB  |`myslq`    | $ npm install mysql --save                                   |
-|MySQL    |`myslq`    | $ npm install mysql --save                                   |
-|Postgres |`pg`       | $ npm install pg --save                                      |
+|MariaDB  |`myslq`    |$ npm install mysql --save                                    |
+|MySQL    |`myslq`    |$ npm install mysql --save                                    |
+|Postgres |`pg`       |$ npm install pg --save                                       |
 
 The `CONNECTION_CONFIG` represents the connection parameters to the database.
 
 |Constant  |Default    |Description                   |
 |----------|-----------|------------------------------|
-|`host`    |`localhost`| Database host name           |
-|`user`    |`root`     | Database user name           |
-|`password`|``         | Database password            |
-|`database`|`database` | Database name                |
+|`host`    |'localhost'|Database host name            |
+|`user`    |'root'     |Database user name            |
+|`password`|''         |Database password             |
+|`database`|'database' |Database name                 |
+
 
 ```javascript
 // CONNECTION_CONFIG
@@ -207,8 +227,9 @@ The `API_CONFIG` represents the API configuration and its routes.
 
 |Constant |Description                     |
 |---------|--------------------------------|
-|`base`   | Main path of the API           |
-|`routes` | All API routes                 |
+|`base`   |Main path of the API            |
+|`routes` |All API routes                  |
+
 
 ```javascript
 // API_CONFIG
@@ -225,11 +246,12 @@ The `ROUTE_CONFIG` represents the API route group.
 
 |Constant  |Default                                   |Description                   |
 |----------|------------------------------------------|------------------------------|
-|`table`   |`table`                                   | Table name                   |
-|`view`    |null                                      | View name                    |
-|`event`   |`TABLE`                                   | Event name (For socket.io event. ['TABLE_INSERTED' | 'TABLE_UPDATED' | 'TABLE_DELETED']) |
-|`methods` |[`GET`, `POST`, `PUT`, `DELETE`, `SEARCH`]| List of methods to implement |
-|`columns` |[]                                        | List of columns (Used only by methods 'POST' and 'PUT') |
+|`table`   |'table'                                   |Table name                    |
+|`view`    |null                                      |View name                     |
+|`event`   |'TABLE'                                   |Event name (For socket.io event. => 'TABLE_INSERTED', 'TABLE_UPDATED', 'TABLE_DELETED') |
+|`methods` |['GET', 'POST', 'PUT', 'DELETE', 'SEARCH']|List of methods to implement  |
+|`columns` |[]                                        |List of columns (Used only by methods 'POST' and 'PUT') |
+
 
 ```javascript
 // ROUTE_CONFIG
@@ -254,8 +276,9 @@ The `COLUMN_CONFIG` represents the column of table.
 
 |Constant  |Default    |Description                       |
 |----------|-----------|----------------------------------|
-|`name`    |``         | Column name                      |
-|`primary` |false      | Defines if it is a primary key   |
+|`name`    |''         |Column name                       |
+|`primary` |false      |Defines if it is a primary key    |
+
 
 ```javascript
 // COLUMN_CONFIG
@@ -271,4 +294,4 @@ The `COLUMN_CONFIG` represents the column of table.
 
 ## License
 
-Licensed under the MIT license.
+Licensed under the [MIT license](LICENSE).

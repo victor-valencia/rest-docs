@@ -27,8 +27,8 @@ rest.startDBServer('mysql', {
 const api_config = {
   base: '/api',
   routes: [
-    {
-      // Médicos ['GET']
+    { 
+      // Doctors ['GET', 'POST', 'PUT', 'DELETE', 'SEARCH']
       table: 'doctors',
       event: 'DOCTOR',
       methods: ['GET', 'POST', 'PUT', 'DELETE', 'SEARCH'],

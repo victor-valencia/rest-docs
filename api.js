@@ -3,7 +3,7 @@ module.exports = {
   base: '/api',
   routes: [
     {
-      // Médicos ['GET']
+      // Doctors ['GET']
       table: 'doctors',
       event: 'DOCTOR',
       methods: ['GET'],
@@ -16,7 +16,7 @@ module.exports = {
       ]
     },
     {
-      // Pacientes ['GET']
+      // Patients ['GET']
       table: 'patients',
       event: 'PATIENT',
       methods: ['GET'],
@@ -29,7 +29,7 @@ module.exports = {
       ]
     },
     {
-      // Citas médicas ['GET', 'POST', 'PUT', 'DELETE']
+      // Appointments ['GET', 'POST', 'PUT', 'DELETE']
       table: 'appointments',
       view: 'vw_appointments',
       event: 'APPOINTMENT',
@@ -43,7 +43,7 @@ module.exports = {
       ]
     },
     {
-      // Cotización de servicios ['GET', 'POST', 'PUT', 'DELETE']
+      // Quotes ['GET', 'POST', 'PUT', 'DELETE']
       table: 'quotes',
       view: 'vw_quotes',
       event: 'QUOTE',
@@ -55,7 +55,7 @@ module.exports = {
       ]
     },
     {
-      // Solicitud de médico ['GET', 'POST', 'PUT', 'DELETE']
+      // Requests ['GET', 'POST', 'PUT', 'DELETE']
       table: 'requests',
       view: 'vw_requests',
       event: 'REQUEST',
