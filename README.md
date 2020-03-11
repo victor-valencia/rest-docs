@@ -182,6 +182,7 @@ The `SERVER_CONFIG` represents the connection to the server.
 |`ip`     |'localhost'|Server ip  |
 |`port`   |8000       |Server port|
 
+Example:
 
 ```javascript
 // SERVER_CONFIG
@@ -210,6 +211,7 @@ The `CONNECTION_CONFIG` represents the connection parameters to the database.
 |`password`|''         |Database password |
 |`database`|'database' |Database name     |
 
+Example:
 
 ```javascript
 // CONNECTION_CONFIG
@@ -230,6 +232,7 @@ The `API_CONFIG` represents the API configuration and its routes.
 |`base`   |Main path of the API|
 |`routes` |All API routes      |
 
+Example:
 
 ```javascript
 // API_CONFIG
@@ -252,6 +255,7 @@ The `ROUTE_CONFIG` represents the API route group.
 |`methods` |['GET', 'POST', 'PUT', 'DELETE', 'SEARCH']|List of methods to implement  |
 |`columns` |[]                                        |List of columns <br />(Used only by methods 'POST' and 'PUT') |
 
+Example:
 
 ```javascript
 // ROUTE_CONFIG
@@ -279,6 +283,7 @@ The `COLUMN_CONFIG` represents the column of table.
 |`name`    |''         |Column name                   |
 |`primary` |false      |Defines if it is a primary key|
 
+Example:
 
 ```javascript
 // COLUMN_CONFIG
