@@ -11,7 +11,7 @@
   |
   */
 
-const api = require('./api_sqlite3.js');
+const api = require('./api.js');
 
 const rest_docs = require('./lib/rest.js');
 var rest = new rest_docs();
