@@ -32,8 +32,8 @@ npm i sqlite3 --save
 # Create Database `zoo`
 $ sqlite3 zoo.db
 
--- Create Table `animals`
-CREATE TABLE IF NOT EXISTS `animals` (
+# Create Table `animals`
+sqlite> CREATE TABLE IF NOT EXISTS `animals` (
   `id` INTEGER PRIMARY KEY AUTOINCREMENT,
   `name` TEXT NOT NULL DEFAULT '',
   `created` TIMESTAMP  NOT NULL DEFAULT CURRENT_TIMESTAMP,

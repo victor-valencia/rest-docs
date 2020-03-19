@@ -1,8 +1,8 @@
 # [REST-Docs](https://github.com/victor-valencia/rest-docs)
 
-Example with `MySQL` or `MariaDB`.
+Example with `Postgres`.
 
-![API](/resources/img/mysql/api.png)
+![API](/resources/img/postgres/api.png)
 
 ## Table of contents
 - [Install](#install)
@@ -20,26 +20,26 @@ Example with `MySQL` or `MariaDB`.
 npm i rest-docs --save
 ```
 
-- Install `MySQL` database library.
+- Install `Postgres` database library.
 
 ```bash
-npm i mysql --save
+npm i pg --save
 ```
 
 ## Database
 
 ```bash
--- Create Database `marvel`
-CREATE DATABASE `marvel`;
+-- Create Database `cinema`
+CREATE DATABASE cinema;
 
--- Create Table `avengers`
-CREATE TABLE IF NOT EXISTS `avengers` (
-  `id` INT(12) NOT NULL AUTO_INCREMENT,
-  `name` VARCHAR(255) NOT NULL DEFAULT '',
-  `created` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  `modified` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-  `deleted` BOOLEAN NOT NULL DEFAULT '0'  
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+-- Create Table `movies`
+CREATE TABLE IF NOT EXISTS movies (
+  id SERIAL PRIMARY KEY,
+  name VARCHAR(255) NOT NULL DEFAULT '',
+  created TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  modified TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  deleted BOOLEAN NOT NULL DEFAULT '0'  
+);
 ```
 
 ## Server
@@ -54,20 +54,20 @@ rest.startServer({
   port: '8080' //<-- YOUR_SERVER_PORT
 })
 
-rest.startDBServer('mysql', {
+rest.startDBServer('pg', {
   host: 'localhost', //<-- YOUR_DATABASE_HOST
-  port: 3306, //<-- YOUR_DATABASE_PORT
-  user: 'root', //<-- YOUR_DATABASE_USER
+  port: 5432, //<-- YOUR_DATABASE_PORT
+  user: 'postgres', //<-- YOUR_DATABASE_USER  
   password: '', //<-- YOUR_DATABASE_PASSWORD
-  database: 'marvel' //<-- YOUR_DATABASE_NAME
+  database: 'cinema' //<-- YOUR_DATABASE_NAME
 });
 
 const api_config = {
   base: '/api',
   routes: [
     {      
-      table: 'avengers', //<-- YOUR_TABLE_NAME
-      event: 'AVENGER', //<-- YOUR_EVENT_NAME 
+      table: 'movies', //<-- YOUR_TABLE_NAME
+      event: 'MOVIE', //<-- YOUR_EVENT_NAME 
       methods: ['GET', 'POST', 'PUT', 'DELETE'], //<-- YOUR_METHODS
       //Used only by methods 'POST' and 'PUT'
       columns: [
@@ -93,29 +93,29 @@ node server.js
 
 * GET `/api/docs`
 
-![API](/resources/img/mysql/api.png)
+![API](/resources/img/postgres/api.png)
 
 ## Test API
 
-* GET `/api/avengers`
+* GET `/api/movies`
 
-![API](/resources/img/mysql/api_get_all.png)
+![API](/resources/img/postgres/api_get_all.png)
 
-* GET `/api/avengers/:id`
+* GET `/api/movies/:id`
 
-![API](/resources/img/mysql/api_get_id.png)
+![API](/resources/img/postgres/api_get_id.png)
 
-* POST `/api/avengers`
+* POST `/api/movies`
 
-![API](/resources/img/mysql/api_post.png)
+![API](/resources/img/postgres/api_post.png)
 
-* PUT `/api/avengers/:id`
+* PUT `/api/movies/:id`
 
-![API](/resources/img/mysql/api_put.png)
+![API](/resources/img/postgres/api_put.png)
 
-* DELETE `/api/avengers/:id`
+* DELETE `/api/movies/:id`
 
-![API](/resources/img/mysql/api_delete.png)
+![API](/resources/img/postgres/api_delete.png)
 
 ## Author
 
