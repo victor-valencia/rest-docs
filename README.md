@@ -282,12 +282,7 @@ Example:
   methods: ['GET', 'POST', 'PUT', 'DELETE'],  
   columns: [
     COLUMN_CONFIG,
-    ...    
-      {name: 'id', primary: true},
-      {name: 'name'},
-      {name: 'specialty'},
-      {name: 'address'},
-      {name: 'photo'}
+    ...
   ]
 }
 ```
