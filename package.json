@@ -22,7 +22,7 @@
     "knex"
   ],
   "author": "Victor Valencia Rico",
-  "license": "ISC",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/victor-valencia/rest-docs/issues"
   },

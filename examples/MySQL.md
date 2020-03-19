@@ -2,7 +2,7 @@
 
 Example with `MySQL` or `MariaDB`.
 
-![API](resources/img/api.png)
+![API](/resources/img/mysql/api.png)
 
 ## Table of contents
 - [Install](#install)
@@ -93,29 +93,29 @@ node server.js
 
 * GET `/api/docs`
 
-![API](/resources/img/api.png)
+![API](/resources/img/mysql/api.png)
 
 ## Test API
 
 * GET `/api/avengers`
 
-![API](resources/img/api_get_all.png)
+![API](/resources/img/mysql/api_get_all.png)
 
 * GET `/api/avengers/:id`
 
-![API](resources/img/api_get_id.png)
+![API](/resources/img/mysql/api_get_id.png)
 
 * POST `/api/avengers`
 
-![API](resources/img/api_post.png)
+![API](/resources/img/mysql/api_post.png)
 
 * PUT `/api/avengers/:id`
 
-![API](resources/img/api_put.png)
+![API](/resources/img/mysql/api_put.png)
 
 * DELETE `/api/avengers/:id`
 
-![API](resources/img/api_delete.png)
+![API](/resources/img/mysql/api_delete.png)
 
 ## Author
 
