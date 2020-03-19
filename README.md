@@ -62,6 +62,7 @@ rest.startServer({
 
 rest.startDBServer('mysql', {
   host: 'localhost', //<-- YOUR_DATABASE_HOST
+  port: 3306, //<-- YOUR_DATABASE_PORT
   user: 'root', //<-- YOUR_DATABASE_USER
   password: '', //<-- YOUR_DATABASE_PASSWORD
   database: 'medic' //<-- YOUR_DATABASE_NAME
