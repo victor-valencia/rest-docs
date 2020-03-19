@@ -2,7 +2,7 @@
 
 Example with `SQLite3`.
 
-![API](/resources/img/sqlite/api.png)
+![API](/resources/img/SQLite3/api.png)
 
 ## Table of contents
 - [Install](#install)
@@ -89,29 +89,29 @@ node server.js
 
 * GET `/api/docs`
 
-![API](/resources/img/sqlite/api.png)
+![API](/resources/img/SQLite3/api.png)
 
 ## Test API
 
 * GET `/api/animals`
 
-![API](/resources/img/sqlite/api_get_all.png)
+![API](/resources/img/SQLite3/api_get_all.png)
 
 * GET `/api/animals/:id`
 
-![API](/resources/img/sqlite/api_get_id.png)
+![API](/resources/img/SQLite3/api_get_id.png)
 
 * POST `/api/animals`
 
-![API](/resources/img/sqlite/api_post.png)
+![API](/resources/img/SQLite3/api_post.png)
 
 * PUT `/api/animals/:id`
 
-![API](/resources/img/sqlite/api_put.png)
+![API](/resources/img/SQLite3/api_put.png)
 
 * DELETE `/api/animals/:id`
 
-![API](/resources/img/sqlite/api_delete.png)
+![API](/resources/img/SQLite3/api_delete.png)
 
 ## Author
 

@@ -1,8 +1,8 @@
 # [REST-Docs](https://github.com/victor-valencia/rest-docs)
 
-Example with `Postgres`.
+Example with `PostgreSQL`.
 
-![API](/resources/img/postgres/api.png)
+![API](/resources/img/PostgreSQL/api.png)
 
 ## Table of contents
 - [Install](#install)
@@ -20,7 +20,7 @@ Example with `Postgres`.
 npm i rest-docs --save
 ```
 
-- Install `Postgres` database library.
+- Install `PostgreSQL` database library.
 
 ```bash
 npm i pg --save
@@ -93,29 +93,29 @@ node server.js
 
 * GET `/api/docs`
 
-![API](/resources/img/postgres/api.png)
+![API](/resources/img/PostgreSQL/api.png)
 
 ## Test API
 
 * GET `/api/movies`
 
-![API](/resources/img/postgres/api_get_all.png)
+![API](/resources/img/PostgreSQL/api_get_all.png)
 
 * GET `/api/movies/:id`
 
-![API](/resources/img/postgres/api_get_id.png)
+![API](/resources/img/PostgreSQL/api_get_id.png)
 
 * POST `/api/movies`
 
-![API](/resources/img/postgres/api_post.png)
+![API](/resources/img/PostgreSQL/api_post.png)
 
 * PUT `/api/movies/:id`
 
-![API](/resources/img/postgres/api_put.png)
+![API](/resources/img/PostgreSQL/api_put.png)
 
 * DELETE `/api/movies/:id`
 
-![API](/resources/img/postgres/api_delete.png)
+![API](/resources/img/PostgreSQL/api_delete.png)
 
 ## Author
 

@@ -1,6 +1,6 @@
 # [REST-Docs](https://github.com/victor-valencia/rest-docs)
 
-RESTful HTTP client library + Docs to test your API REST. Supports for `Postgres`, `MySQL`, `MariaDB` and `SQLite3`.
+RESTful HTTP client library + Docs to test your API REST. Supports for `PostgreSQL`, `MySQL`, `MariaDB` and `SQLite3`.
 
 ![API](resources/img/api.png)
 
@@ -36,7 +36,7 @@ npm i mssql --save
 npm i mysql --save
 ```
 
-- `Postgres`
+- `PostgreSQL`
 
 ```bash
 npm i pg --save
@@ -210,13 +210,13 @@ Example:
 
 The `CLIENT` parameter is required and determines which client adapter will be used with the library. By default: `myslq`.
 
-|Database |CLIENT     |Additional command to install the appropriate database library|
-|---------|-----------|--------------------------------------------------------------|
-|MariaDB  |`myslq`    |$ npm i mysql --save                                    |
-|MSSQL    |`msslq`    |$ npm i mssql --save                                    |
-|MySQL    |`myslq`    |$ npm i mysql --save                                    |
-|Postgres |`pg`       |$ npm i pg --save                                       |
-|SQLite3  |`sqlite`   |$ npm i sqlite3 --save                                  |
+|Database  |CLIENT     |Additional command to install the appropriate database library|
+|----------|-----------|--------------------------------------------------------------|
+|MariaDB   |`myslq`    |$ npm i mysql --save                                    |
+|MSSQL     |`msslq`    |$ npm i mssql --save                                    |
+|MySQL     |`myslq`    |$ npm i mysql --save                                    |
+|PostgreSQL|`pg`       |$ npm i pg --save                                       |
+|SQLite3   |`sqlite`   |$ npm i sqlite3 --save                                  |
 
 The `CONNECTION_CONFIG` represents the connection parameters to the database.
 
@@ -307,8 +307,8 @@ Example:
 ## Examples
 
 - [MySQL or MariaDB](/examples/MySQL.md).
-- [Postgres](/examples/Postgres.md).
-- [SQLite3](/examples/SQLite.md).
+- [PostgreSQL](/examples/PostgreSQL.md).
+- [SQLite3](/examples/SQLite3.md).
 
 ## Author
 
