@@ -311,6 +311,7 @@ Example:
 ## Examples
 
 - [MySQL or MariaDB](/examples/MySQL.md).
+- [SQLite3](/examples/SQLite.md).
 
 ## Author
 

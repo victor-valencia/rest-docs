@@ -34,12 +34,11 @@ CREATE DATABASE `marvel`;
 
 -- Create Table `avengers`
 CREATE TABLE IF NOT EXISTS `avengers` (
-  `id` int(12) NOT NULL AUTO_INCREMENT,
-  `name` varchar(255) NOT NULL DEFAULT '',
-  `created` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  `modified` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-  `deleted` tinyint(1) NOT NULL DEFAULT '0',
-  PRIMARY KEY (`id`)
+  `id` INT(12) NOT NULL AUTO_INCREMENT,
+  `name` VARCHAR(255) NOT NULL DEFAULT '',
+  `created` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `modified` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `deleted` BOOLEAN NOT NULL DEFAULT '0'  
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 ```
 
@@ -123,4 +122,4 @@ node server.js
 
 ## License
 
-Licensed under the [MIT license](LICENSE).
+Licensed under the [MIT license](/LICENSE).
