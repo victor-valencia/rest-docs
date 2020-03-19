@@ -246,6 +246,7 @@ The `API_CONFIG` represents the API configuration and its routes.
 |Constant |Description         |
 |---------|--------------------|
 |`base`   |Main path of the API|
+|`table`  |Main configuration for all tables|
 |`routes` |All API routes      |
 
 Example:
@@ -254,6 +255,11 @@ Example:
 // API_CONFIG
 {
   base: '/api',
+  table: {
+    created_date: 'created',
+    modified_date: 'modified',
+    active: 'deleted'
+  },
   routes: [
     ROUTE_CONFIG,    
     ...
