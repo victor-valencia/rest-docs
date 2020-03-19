@@ -11,10 +11,10 @@
   |
   */
 
-const api = require('./api.js');
+const api = require('./api_sqlite3.js');
 
-const rest_doc = require('./lib/rest.js');
-var rest = new rest_doc();
+const rest_docs = require('./lib/rest.js');
+var rest = new rest_docs();
 
 rest.startServer()
 rest.startDBServer()

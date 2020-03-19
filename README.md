@@ -1,6 +1,6 @@
 # [REST-Docs](https://github.com/victor-valencia/rest-docs)
 
-RESTful HTTP client library + Docs to test your API REST. Supports for `Postgres`, `MySQL` y `MariaDB`.
+RESTful HTTP client library + Docs to test your API REST. Supports for `Postgres`, `MySQL`, `MariaDB` and `SQLite3`.
 
 ![API](resources/img/api.png)
 
@@ -12,27 +12,40 @@ RESTful HTTP client library + Docs to test your API REST. Supports for `Postgres
 - [Result](#result)
 - [Test API](#test-api)
 - [Methods](#methods)
+- [Examples](#examples)
 - [Author](#author)
 - [License](#license)
 
 ## Install
 
 ```bash
-npm install rest-docs --save
+npm i rest-docs --save
 ```
 
 ## Install Database Library
 
+- `MSSQL`
+
+```bash
+npm i mssql --save
+```
+
 - `MySQL` and `MariaDB`
 
 ```bash
-npm install mysql --save
+npm i mysql --save
 ```
 
 - `Postgres`
 
 ```bash
-npm install pg --save
+npm i pg --save
+```
+
+- `SQLite3`
+
+```bash
+npm i sqlite3 --save
 ```
 
 ## Usage
@@ -87,7 +100,7 @@ node server.js
 ## Usage with .env file
 
 ```bash
-npm install dotenv --save
+npm i dotenv --save
 ```
 
 ```javascript
@@ -198,9 +211,11 @@ The `CLIENT` parameter is required and determines which client adapter will be u
 
 |Database |CLIENT     |Additional command to install the appropriate database library|
 |---------|-----------|--------------------------------------------------------------|
-|MariaDB  |`myslq`    |$ npm install mysql --save                                    |
-|MySQL    |`myslq`    |$ npm install mysql --save                                    |
-|Postgres |`pg`       |$ npm install pg --save                                       |
+|MariaDB  |`myslq`    |$ npm i mysql --save                                    |
+|MSSQL    |`msslq`    |$ npm i mssql --save                                    |
+|MySQL    |`myslq`    |$ npm i mysql --save                                    |
+|Postgres |`pg`       |$ npm i pg --save                                       |
+|SQLite3  |`sqlite`   |$ npm i sqlite3 --save                                  |
 
 The `CONNECTION_CONFIG` represents the connection parameters to the database.
 
@@ -292,6 +307,10 @@ Example:
   primary: true
 }
 ```
+
+## Examples
+
+- [MySQL or MariaDB](/examples/MySQL.md).
 
 ## Author
 

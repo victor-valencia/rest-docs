@@ -9,8 +9,8 @@
   |
   */
 
-const rest_doc = require('./lib/rest.js');
-var rest = new rest_doc();
+const rest_docs = require('./lib/rest.js');
+var rest = new rest_docs();
 
 rest.startServer({
   ip: '127.0.0.1',
