@@ -1,6 +1,6 @@
 # [REST-Docs](https://github.com/victor-valencia/rest-docs)
 
-RESTful HTTP client library + Docs to test your API REST. Supports for `PostgreSQL`, `MySQL`, `MariaDB` and `SQLite3`.
+RESTful HTTP client library + Docs to test your API REST. Supports for `PostgreSQL`, `MySQL`, `MariaDB`, `MSSQL` and `SQLite3`.
 
 ![API](resources/img/api.png)
 
@@ -129,6 +129,11 @@ rest.startDBServer();
 
 const api_config = {
   base: '/api',
+  table: {
+    created_date: 'created',
+    modified_date: 'modified',
+    active: 'deleted'
+  },
   routes: [
     {      
       table: 'doctors', //<-- YOUR_TABLE_NAME
@@ -273,9 +278,9 @@ The `ROUTE_CONFIG` represents the API route group.
 |----------|------------------------------------------|------------------------------|
 |`table`   |'table'                                   |Table name                    |
 |`view`    |null                                      |View name                     |
-|`event`   |'TABLE'                                   |Event name <br />(For socket.io event. => 'TABLE_INSERTED', 'TABLE_UPDATED', 'TABLE_DELETED') |
-|`methods` |['GET', 'POST', 'PUT', 'DELETE', 'SEARCH']|List of methods to implement  |
-|`columns` |[]                                        |List of columns <br />(Used only by methods 'POST' and 'PUT') |
+|`event`   |'TABLE'                                   |Event name<br />(For socket.io event. => 'TABLE_INSERTED', 'TABLE_UPDATED', 'TABLE_DELETED') |
+|`methods` |['GET', 'POST', 'PUT', 'DELETE']          |List of methods to implement<br />['GET', 'POST', 'PUT', 'DELETE', 'SEARCH', 'SEARCH_COLUMN']  |
+|`columns` |[]                                        |List of columns<br />(Used only by methods 'POST' and 'PUT') |
 
 Example:
 

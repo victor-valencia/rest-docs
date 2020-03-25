@@ -28,10 +28,10 @@ const api_config = {
   base: '/api',
   routes: [
     { 
-      // Doctors ['GET', 'POST', 'PUT', 'DELETE', 'SEARCH']
+      // Doctors ['GET', 'POST', 'PUT', 'DELETE']
       table: 'doctors',
       event: 'DOCTOR',
-      methods: ['GET', 'POST', 'PUT', 'DELETE', 'SEARCH'],
+      methods: ['GET', 'POST', 'PUT', 'DELETE'],
       columns: [
           {name: 'id', primary: true},
           {name: 'name'},
