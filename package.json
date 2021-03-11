@@ -1,6 +1,6 @@
 {
   "name": "rest-docs",
-  "version": "0.4.4",
+  "version": "0.4.5",
   "description": "RESTful HTTP client library + Docs to test your API REST. Supports for PostgreSQL, MySQL, MariaDB and SQLite3.",
   "main": "lib/rest.js",
   "scripts": {
@@ -30,6 +30,7 @@
   "homepage": "https://github.com/victor-valencia/rest-docs#readme",
   "dependencies": {
     "body-parser": "^1.19.0",
+    "compression": "^1.7.4",
     "cors": "^2.8.5",
     "dotenv": "^8.2.0",
     "ejs": "^3.0.1",

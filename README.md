@@ -57,7 +57,8 @@ var rest = new rest_docs();
 
 rest.startServer({
   ip: '127.0.0.1', //<-- YOUR_SERVER_IP
-  port: '8080' //<-- YOUR_SERVER_PORT
+  port: '8080', //<-- YOUR_SERVER_PORT
+  compression: 'gzip' //<-- YOUR_COMPRESSION_STRATEGY
 })
 
 rest.startDBServer('mysql', {
@@ -96,6 +97,7 @@ Run
 node server.js
 # API Docs at http://127.0.0.1:8080/api/docs
 # App listening at http://127.0.0.1:8080
+# Compression data: gzip
 ```
 
 ## Usage with .env file
@@ -110,6 +112,7 @@ NODE_ENV=development
 
 IP=localhost
 PORT=8000
+COMPRESSION=gzip
 
 DB_CONNECTION=mysql
 DB_HOST=localhost
@@ -160,6 +163,7 @@ Run
 node server.js
 # API Docs at http://localhost:8000/api/docs
 # App listening at http://127.0.0.1:8000
+# Compression data: gzip
 ```
 
 ## Result
@@ -196,10 +200,11 @@ node server.js
 
 The `SERVER_CONFIG` represents the connection to the server.
 
-|Constant |Default    |Description|
-|---------|-----------|-----------|
-|`ip`     |'localhost'|Server ip  |
-|`port`   |8000       |Server port|
+|Constant     |Default    |Description         |
+|-------------|-----------|--------------------|
+|`ip`         |'localhost'|Server ip           |
+|`port`       |8000       |Server port         |
+|`compression`|''         |Compression strategy|
 
 Example:
 
@@ -208,6 +213,7 @@ Example:
 {
   ip: {YOUR_SERVER_IP},
   port: {YOUR_SERVER_PORT}
+  compression: {YOUR_COMPRESSION_STRATEGY}
 }
 ```
 

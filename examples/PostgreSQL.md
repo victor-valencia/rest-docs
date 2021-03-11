@@ -51,7 +51,8 @@ var rest = new rest_docs();
 
 rest.startServer({
   ip: '127.0.0.1', //<-- YOUR_SERVER_IP
-  port: '8080' //<-- YOUR_SERVER_PORT
+  port: '8080', //<-- YOUR_SERVER_PORT
+  compression: 'gzip' //<-- YOUR_COMPRESSION_STRATEGY
 })
 
 rest.startDBServer('pg', {
