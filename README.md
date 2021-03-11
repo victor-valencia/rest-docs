@@ -212,7 +212,7 @@ Example:
 // SERVER_CONFIG
 {
   ip: {YOUR_SERVER_IP},
-  port: {YOUR_SERVER_PORT}
+  port: {YOUR_SERVER_PORT},
   compression: {YOUR_COMPRESSION_STRATEGY}
 }
 ```
