@@ -285,8 +285,8 @@ The `ROUTE_CONFIG` represents the API route group.
 |`table`   |'table'                                   |Table name                    |
 |`view`    |null                                      |View name                     |
 |`event`   |'TABLE'                                   |Event name<br />(For socket.io event. => 'TABLE_INSERTED', 'TABLE_UPDATED', 'TABLE_DELETED') |
-|`methods` |['GET', 'POST', 'PUT', 'DELETE']          |List of methods to implement<br />['GET', 'POST', 'PUT', 'DELETE', 'SEARCH', 'SEARCH_COLUMN', 'POST_BATCH', 'DELETE_BATCH']  |
-|`columns` |[]                                        |List of columns<br />(Used only by methods 'POST', 'PUT' and  'POST_BATCH') |
+|`methods` |['GET', 'POST', 'PUT', 'DELETE']          |List of methods to implement<br />['GET', 'POST', 'PUT', 'DELETE', 'SEARCH', 'SEARCH_COLUMN', 'POST_BATCH', 'PUT_BATCH', 'DELETE_BATCH']  |
+|`columns` |[]                                        |List of columns<br />(Used only by methods 'POST', 'PUT', 'POST_BATCH' and  'PUT_BATCH') |
 
 Example:
 
