@@ -1,6 +1,6 @@
 {
   "name": "rest-docs",
-  "version": "0.5.0",
+  "version": "0.5.1",
   "description": "RESTful HTTP client library + Docs to test your API REST. Supports for PostgreSQL, MySQL, MariaDB and SQLite3.",
   "main": "lib/rest.js",
   "scripts": {
@@ -36,7 +36,7 @@
     "ejs": "^3.0.1",
     "express": "^4.17.1",
     "extend": "^3.0.2",
-    "knex": "^0.20.11",    
-    "socket.io": "^2.3.0"    
+    "knex": "^0.20.11",
+    "socket.io": "^4.1.2"
   }
 }
