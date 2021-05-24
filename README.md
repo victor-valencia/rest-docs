@@ -71,6 +71,10 @@ rest.startDBServer('mysql', {
 
 const api_config = {
   base: '/api',
+  pages: {
+    docs: true, //<-- Expose PAGE: /{{base}}/docs
+    monitor: true //<-- Expose PAGE: /{{base}}/monitor
+  },
   routes: [
     {      
       table: 'doctors', //<-- YOUR_TABLE_NAME
@@ -95,9 +99,12 @@ Run
 
 ```bash
 node server.js
-# API Docs at http://127.0.0.1:8080/api/docs
+# PAGES: {
+#   api: 'http://127.0.0.1:8080/api',
+#   docs: 'http://127.0.0.1:8080/api/docs',
+#   monitor: 'http://127.0.0.1:8080/api/monitor'    
+# }
 # App listening at http://127.0.0.1:8080
-# Compression data: gzip
 ```
 
 ## Usage with .env file
@@ -161,9 +168,12 @@ Run
 
 ```bash
 node server.js
-# API Docs at http://localhost:8000/api/docs
-# App listening at http://127.0.0.1:8000
-# Compression data: gzip
+# PAGES: {
+#   api: 'http://localhost:8000/api',
+#   docs: 'http://localhost:8000/api/docs',
+#   monitor: 'http://localhost:8000/api/monitor'    
+# }
+# App listening at http://localhost:8000
 ```
 
 ## Result
@@ -193,6 +203,16 @@ node server.js
 * DELETE `/api/doctors/:id`
 
 ![API](resources/img/api_delete.png)
+
+## Pages
+
+* Docs `/api/docs`
+
+![DOCS](resources/img/api.png)
+
+* Monitor `/api/monitor`
+
+![MONITOR](resources/img/monitor.png)
 
 ## Methods
 
@@ -257,6 +277,7 @@ The `API_CONFIG` represents the API configuration and its routes.
 |Constant |Description         |
 |---------|--------------------|
 |`base`   |Main path of the API|
+|`pages`  |Pages of the API|
 |`table`  |Main configuration for all tables|
 |`routes` |All API routes      |
 
@@ -266,6 +287,10 @@ Example:
 // API_CONFIG
 {
   base: '/api',
+  pages: {
+    docs: true,
+    monitor: true
+  },
   table: {
     created_date: 'created',
     modified_date: 'modified',

@@ -1,6 +1,10 @@
 module.exports = {
 
   base: '/api',
+  pages: {
+    docs: true,
+    monitor: true
+  },
   routes: [
     {
       // Doctors ['GET']
