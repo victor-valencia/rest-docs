@@ -67,6 +67,10 @@ rest.startDBServer('mssql', {
 
 const api_config = {
   base: '/api',
+  pages: {
+    docs: true, //<-- Expose PAGE: /{{base}}/docs
+    monitor: true //<-- Expose PAGE: /{{base}}/monitor
+  },
   routes: [
     {      
       table: 'products', //<-- YOUR_TABLE_NAME
@@ -88,7 +92,11 @@ Run
 
 ```bash
 node server.js
-# API Docs at http://127.0.0.1:8080/api/docs
+# PAGES: {
+#   api: 'http://127.0.0.1:8080/api',
+#   docs: 'http://127.0.0.1:8080/api/docs',
+#   monitor: 'http://127.0.0.1:8080/api/monitor'    
+# }
 # App listening at http://127.0.0.1:8080
 ```
 
