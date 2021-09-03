@@ -331,10 +331,11 @@ Example:
 
 The `COLUMN_CONFIG` represents the column of table.
 
-|Constant  |Default    |Description                   |
-|----------|-----------|------------------------------|
-|`name`    |''         |Column name                   |
-|`primary` |false      |Defines if it is a primary key|
+|Constant  |Default    |Description                                            |
+|----------|-----------|-------------------------------------------------------|
+|`name`    |''         |Column name                                            |
+|`primary` |false      |Defines if column is primary key                       |
+|`hidden`  |false      |Defines if the column data will be sent in the response|
 
 Example:
 
@@ -342,7 +343,8 @@ Example:
 // COLUMN_CONFIG
 {
   name: 'id', 
-  primary: true
+  primary: true,
+  hidden: true
 }
 ```
 
