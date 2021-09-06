@@ -71,18 +71,20 @@ const api_config = {
     docs: true, //<-- Expose PAGE: /{{base}}/docs
     monitor: true //<-- Expose PAGE: /{{base}}/monitor
   },
-  routes: [
-    {      
-      table: 'products', //<-- YOUR_TABLE_NAME
-      event: 'PRODUCT', //<-- YOUR_EVENT_NAME 
-      methods: ['GET', 'POST', 'PUT', 'DELETE'], //<-- YOUR_METHODS
-      //Used only by methods 'POST' and 'PUT'
-      columns: [
-          {name: 'id', primary: true},
-          {name: 'name'}
-      ]
-    }
-  ]  
+  routes: {
+    tb: [
+      {      
+        table: 'products', //<-- YOUR_TABLE_NAME
+        event: 'PRODUCT', //<-- YOUR_EVENT_NAME 
+        methods: ['GET', 'POST', 'PUT', 'DELETE'], //<-- YOUR_METHODS
+        //Used only by methods 'POST' and 'PUT'
+        columns: [
+            {name: 'id', primary: true},
+            {name: 'name'}
+        ]
+      }
+    ] 
+  } 
 }
 
 rest.buildRoutes(api_config)
