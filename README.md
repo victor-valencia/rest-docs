@@ -12,6 +12,7 @@ RESTful HTTP client library + Docs to test your API REST. Supports for `PostgreS
 - [Result](#result)
 - [Test API](#test-api)
 - [Methods](#methods)
+- [Migrations](#migrations)
 - [Examples](#examples)
 - [Author](#author)
 - [License](#license)
@@ -75,21 +76,23 @@ const api_config = {
     docs: true, //<-- Expose PAGE: /{{base}}/docs
     monitor: true //<-- Expose PAGE: /{{base}}/monitor
   },
-  routes: [
-    {      
-      table: 'doctors', //<-- YOUR_TABLE_NAME
-      event: 'DOCTOR', //<-- YOUR_EVENT_NAME 
-      methods: ['GET', 'POST', 'PUT', 'DELETE'], //<-- YOUR_METHODS
-      //Used only by methods 'POST' and 'PUT'
-      columns: [
-          {name: 'id', primary: true},
-          {name: 'name'},
-          {name: 'specialty'},
-          {name: 'address'},
-          {name: 'photo'}
-      ]
-    }
-  ]  
+  routes: {
+    tb: [
+      {      
+        table: 'doctors', //<-- YOUR_TABLE_NAME
+        event: 'DOCTOR', //<-- YOUR_EVENT_NAME 
+        methods: ['GET', 'POST', 'PUT', 'DELETE'], //<-- YOUR_METHODS
+        //Used only by methods 'POST' and 'PUT'
+        columns: [
+            {name: 'id', primary: true},
+            {name: 'name'},
+            {name: 'specialty'},
+            {name: 'address'},
+            {name: 'photo'}
+        ]
+      }
+    ]  
+  }
 }
 
 rest.buildRoutes(api_config)
@@ -144,21 +147,23 @@ const api_config = {
     modified_date: 'modified',
     active: 'deleted'
   },
-  routes: [
-    {      
-      table: 'doctors', //<-- YOUR_TABLE_NAME
-      event: 'DOCTOR', //<-- YOUR_EVENT_NAME 
-      methods: ['GET', 'POST', 'PUT', 'DELETE'], //<-- YOUR_METHODS
-      //Used only by methods 'POST' and 'PUT'
-      columns: [
-          {name: 'id', primary: true},
-          {name: 'name'},
-          {name: 'specialty'},
-          {name: 'address'},
-          {name: 'photo'}
-      ]
-    }
-  ]  
+  routes: {
+    tb: [
+      {      
+        table: 'doctors', //<-- YOUR_TABLE_NAME
+        event: 'DOCTOR', //<-- YOUR_EVENT_NAME 
+        methods: ['GET', 'POST', 'PUT', 'DELETE'], //<-- YOUR_METHODS
+        //Used only by methods 'POST' and 'PUT'
+        columns: [
+            {name: 'id', primary: true},
+            {name: 'name'},
+            {name: 'specialty'},
+            {name: 'address'},
+            {name: 'photo'}
+        ]
+      }
+    ]
+  }  
 }
 
 rest.buildRoutes(api_config)
@@ -243,11 +248,11 @@ The `CLIENT` parameter is required and determines which client adapter will be u
 
 |Database  |CLIENT     |Additional command to install the appropriate database library|
 |----------|-----------|--------------------------------------------------------------|
-|MariaDB   |`myslq`    |$ npm i mysql --save                                    |
-|MSSQL     |`msslq`    |$ npm i mssql --save                                    |
-|MySQL     |`myslq`    |$ npm i mysql --save                                    |
-|PostgreSQL|`pg`       |$ npm i pg --save                                       |
-|SQLite3   |`sqlite`   |$ npm i sqlite3 --save                                  |
+|MariaDB   |`myslq`    |$ npm i mysql --save                                          |
+|MSSQL     |`msslq`    |$ npm i mssql --save                                          |
+|MySQL     |`myslq`    |$ npm i mysql --save                                          |
+|PostgreSQL|`pg`       |$ npm i pg --save                                             |
+|SQLite3   |`sqlite`   |$ npm i sqlite3 --save                                        |
 
 The `CONNECTION_CONFIG` represents the connection parameters to the database.
 
@@ -272,14 +277,14 @@ Example:
 
 - `buildRoutes`(`API_CONFIG`)
 
-The `API_CONFIG` represents the API configuration and its routes.
+The `API_CONFIG` represents the API configuration.
 
-|Constant |Description         |
-|---------|--------------------|
-|`base`   |Main path of the API|
-|`pages`  |Pages of the API|
+|Constant |Description                      |
+|---------|---------------------------------|
+|`base`   |Main path of the API             |
+|`pages`  |Pages of the API                 |
 |`table`  |Main configuration for all tables|
-|`routes` |All API routes      |
+|`routes` |All API routes                   |
 
 Example:
 
@@ -287,36 +292,90 @@ Example:
 // API_CONFIG
 {
   base: '/api',
-  pages: {
-    docs: true,
-    monitor: true
-  },
-  table: {
-    created_date: 'created',
-    modified_date: 'modified',
-    active: 'deleted'
-  },
-  routes: [
-    ROUTE_CONFIG,    
-    ...
-  ]  
+  pages: PAGE_CONFIG,
+  table: TABLE_CONFIG,
+  routes: ROUTE_CONFIG     
 }
 ```
 
-The `ROUTE_CONFIG` represents the API route group.
+The `PAGE_CONFIG` represents the global configuration of the pages.
 
-|Constant  |Default                                   |Description                   |
-|----------|------------------------------------------|------------------------------|
-|`table`   |'table'                                   |Table name                    |
-|`view`    |null                                      |View name                     |
-|`event`   |'TABLE'                                   |Event name<br />(For socket.io event. => 'TABLE_INSERTED', 'TABLE_UPDATED', 'TABLE_DELETED') |
-|`methods` |['GET', 'POST', 'PUT', 'DELETE']          |List of methods to implement<br />['GET', 'POST', 'PUT', 'DELETE', 'PATCH', 'SEARCH', 'SEARCH_COLUMN', 'POST_BATCH', 'PUT_BATCH', 'PATCH_BATCH', 'DELETE_BATCH']  |
-|`columns` |[]                                        |List of columns<br />(Used only by methods 'POST', 'PUT', 'PATCH', 'POST_BATCH', 'PUT_BATCH' and 'PATCH_BATCH') |
+|Constant  |Default |Description                              |
+|----------|--------|-----------------------------------------|
+|`docs`    |true    |Indicates if the docs page is visible    |
+|`monitor` |true    |Indicates if the monitor page is visible |
+
+Example:
+
+```javascript
+// PAGE_CONFIG
+{      
+  docs: true,  
+  monitor: true
+}
+```
+
+The `TABLE_CONFIG` represents the global configuration of table.
+
+|Constant        |Default    |Description                      |
+|----------------|-----------|---------------------------------|
+|`created_date`  |'created'  |Name of the creation date column |
+|`modified_date` |'modified' |Name of the modified date column |
+|`active`        |'deleted'  |Name of the deleted column       |
+
+Example:
+
+```javascript
+// TABLE_CONFIG
+{
+  created_date: 'created',
+  modified_date: 'modified',
+  active: 'deleted'
+}
+```
+
+The `ROUTE_CONFIG` represents the route groups.
+
+|Constant  |Default |Description                  |
+|----------|--------|-----------------------------|
+|`tb`      |[]      |Group for tables or views    |
+|`fn`      |[]      |Group for functions          |
+|`sp`      |[]      |Group for stored procedures  |
 
 Example:
 
 ```javascript
 // ROUTE_CONFIG
+{      
+  tb: [
+    TB_CONFIG,
+    ...
+  ],  
+  fn: [
+    FN_CONFIG,
+    ...
+  ],
+  sp: [
+    SP_CONFIG,
+    ...
+  ]
+}
+```
+
+The `TB_CONFIG` represents the table or view configuration.
+
+|Constant  |Default                          |Description                   |
+|----------|---------------------------------|------------------------------|
+|`table`   |'table'                          |Table name                    |
+|`view`    |null                             |View name                     |
+|`event`   |'TABLE'                          |Event name<br />(For socket.io event. => 'TABLE_INSERTED', 'TABLE_UPDATED', 'TABLE_DELETED') |
+|`methods` |['GET', 'POST', 'PUT', 'DELETE'] |List of methods to implement<br />['GET', 'POST', 'PUT', 'DELETE', 'PATCH', 'SEARCH', 'SEARCH_COLUMN', 'POST_BATCH', 'PUT_BATCH', 'PATCH_BATCH', 'DELETE_BATCH']  |
+|`columns` |[]                               |List of columns<br />(Used only by methods 'POST', 'PUT', 'PATCH', 'POST_BATCH', 'PUT_BATCH' and 'PATCH_BATCH') |
+
+Example:
+
+```javascript
+// TB_CONFIG
 {      
   table: 'table',  
   view: null,
@@ -331,11 +390,11 @@ Example:
 
 The `COLUMN_CONFIG` represents the column of table.
 
-|Constant  |Default    |Description                                            |
-|----------|-----------|-------------------------------------------------------|
-|`name`    |''         |Column name                                            |
-|`primary` |false      |Defines if column is primary key                       |
-|`hidden`  |false      |Defines if the column data will be sent in the response|
+|Constant  |Default    |Description                                             |
+|----------|-----------|--------------------------------------------------------|
+|`name`    |''         |Column name                                             |
+|`primary` |false      |Defines if column is primary key                        |
+|`hidden`  |false      |Defines if the column data will be sent in the response |
 
 Example:
 
@@ -348,11 +407,70 @@ Example:
 }
 ```
 
+The `FN_CONFIG` represents the function configuration.
+
+|Constant   |Default    |Description    |
+|-----------|-----------|---------------|
+|`function` |'function' |Function name  |
+|`params`   |[]         |List of params |
+
+Example:
+
+```javascript
+// FN_CONFIG
+{      
+  function: 'function',  
+  params: [
+    PARAM_CONFIG,
+    ...
+  ]
+}
+```
+
+The `SP_CONFIG` represents the stored procedure configuration.
+
+|Constant    |Default     |Description           |
+|------------|------------|----------------------|
+|`procedure` |'procedure' |Stored procedure name |
+|`params`    |[]          |List of params        |
+
+Example:
+
+```javascript
+// SP_CONFIG
+{      
+  procedure: 'procedure',  
+  params: [
+    PARAM_CONFIG,
+    ...
+  ]
+}
+```
+
+The `PARAM_CONFIG` represents the param of function or stored procedure.
+
+|Constant  |Default |Description |
+|----------|--------|------------|
+|`name`    |''      |Param name  |
+
+Example:
+
+```javascript
+// PARAM_CONFIG
+{
+  name: 'n'
+}
+```
+
 ## Examples
 
 - [MySQL or MariaDB](/examples/MySQL.md).
 - [PostgreSQL](/examples/PostgreSQL.md).
 - [SQLite3](/examples/SQLite3.md).
+
+## Migrations
+
+- [For version 0.x to 1.x](/examples/Migration_v.0.x_to_v1.x.md).
 
 ## Author
 
