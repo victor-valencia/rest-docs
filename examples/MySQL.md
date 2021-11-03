@@ -60,7 +60,8 @@ rest.startDBServer('mysql', {
   port: 3306, //<-- YOUR_DATABASE_PORT
   user: 'root', //<-- YOUR_DATABASE_USER
   password: '', //<-- YOUR_DATABASE_PASSWORD
-  database: 'marvel' //<-- YOUR_DATABASE_NAME
+  database: 'marvel', //<-- YOUR_DATABASE_NAME
+  timezone: '+00:00' //<-- YOUR_DATABASE_TIMEZONE
 });
 
 const api_config = {

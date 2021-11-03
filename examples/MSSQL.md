@@ -62,7 +62,8 @@ rest.startDBServer('mssql', {
   port: 1433, //<-- YOUR_DATABASE_PORT
   user: 'sa', //<-- YOUR_DATABASE_USER
   password: '', //<-- YOUR_DATABASE_PASSWORD
-  database: 'shop' //<-- YOUR_DATABASE_NAME
+  database: 'shop', //<-- YOUR_DATABASE_NAME
+  timezone: '+00:00' //<-- YOUR_DATABASE_TIMEZONE
 });
 
 const api_config = {

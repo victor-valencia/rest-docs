@@ -60,7 +60,8 @@ rest.startDBServer('pg', {
   port: 5432, //<-- YOUR_DATABASE_PORT
   user: 'postgres', //<-- YOUR_DATABASE_USER  
   password: '', //<-- YOUR_DATABASE_PASSWORD
-  database: 'cinema' //<-- YOUR_DATABASE_NAME
+  database: 'cinema', //<-- YOUR_DATABASE_NAME
+  timezone: '+00:00' //<-- YOUR_DATABASE_TIMEZONE
 });
 
 const api_config = {

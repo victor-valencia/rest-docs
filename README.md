@@ -67,7 +67,8 @@ rest.startDBServer('mysql', {
   port: 3306, //<-- YOUR_DATABASE_PORT
   user: 'root', //<-- YOUR_DATABASE_USER
   password: '', //<-- YOUR_DATABASE_PASSWORD
-  database: 'medic' //<-- YOUR_DATABASE_NAME
+  database: 'medic', //<-- YOUR_DATABASE_NAME
+  timezone: '+00:00' //<-- YOUR_DATABASE_TIMEZONE
 });
 
 const api_config = {
@@ -262,6 +263,7 @@ The `CONNECTION_CONFIG` represents the connection parameters to the database.
 |`user`    |'root'     |Database user name|
 |`password`|''         |Database password |
 |`database`|'database' |Database name     |
+|`timezone`|'+00:00'   |Database timezone |
 
 Example:
 
@@ -271,7 +273,8 @@ Example:
   host: {YOUR_DATABASE_HOST},
   user: {YOUR_DATABASE_USER},
   password: {YOUR_DATABASE_PASSWORD},
-  database: {YOUR_DATABASE_NAME}
+  database: {YOUR_DATABASE_NAME},
+  timezone: {YOUR_DATABASE_TIMEZONE}
 }
 ```
 
