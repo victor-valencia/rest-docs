@@ -131,6 +131,8 @@ DB_PORT=3306
 DB_USER=root
 DB_PASSWORD=
 DB_DATABASE=medic
+
+API_KEY=65856b68541470a4ad95e7fe8b6bbb40
 ```
 
 ```javascript
